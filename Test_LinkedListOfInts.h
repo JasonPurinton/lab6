@@ -19,14 +19,20 @@ public:
 
 
    void runTests();
-   //Call to tests "tx()". Prints results and returns bool true==pass
-   bool t1();//Is size zero?
+   //Call to tests "tx()". Prints results and returns if true==pass
+   bool t1();//Is list empty?
+   bool t2();//Is list not empty?
+   bool t3();//Is size zero?
+   bool t4();//Is size correct if 5 values added?
 
 
-void printPassFail(bool isPassed) const;
+   void printPassFail(bool isPassed) const;
 
-void printTestMessage(std::string testDescription);
+   void printTestMessage(std::string testDescription) const;
 
+private:
+    int m_testNum= 0;
+    bool m_bool;
 
 };
 

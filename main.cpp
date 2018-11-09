@@ -10,12 +10,12 @@
 #include "List.h"
 
 int main(int argc, char** argv){
-	std::cout << "Running Test";
+	std::cout <<'\n'<< "**Running Test**"<<'\n';
 	const int numNodes= 20;//Number of nodes to add to list
 	Test_LinkedListOfInts myTester(numNodes);
 	myTester.runTests();
 
-	std::cout << "Test Finished";
+	std::cout <<'\n'<< "**Test Finished**"<<'\n'<<std::endl;
 
 	return (0);
 

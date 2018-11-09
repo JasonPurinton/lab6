@@ -1,6 +1,6 @@
 #	Author: Jason Purinton
 # Reference John Gibbons
-#	Date: 2016.10.26
+#	Date: 2018.11.09
 
 
 prog: main.o  Test_LinkedListOfInts.o
@@ -9,10 +9,6 @@ prog: main.o  Test_LinkedListOfInts.o
 
 main.o: main.cpp
 	g++ -g -Wall -std=c++11 -c main.cpp
-
-
-#Test.o: Test.h Test.cpp
-#	g++ -g -Wall -std=c++11 -c Test.cpp
 
 
 Test_LinkedListOfInts.o:  Test_LinkedListOfInts.cpp
