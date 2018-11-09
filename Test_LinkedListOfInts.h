@@ -25,8 +25,10 @@ public:
    bool t3();//Is size zero?
    bool t4();//Is size correct if 5 values added?
    bool t5();//Search
-  // bool t6();//Search
-
+   bool t6();//Search
+   bool t7();//Search
+   bool t8();//Search
+   bool t9();//Search
 
    void printPassFail(bool isPassed) const;
 
