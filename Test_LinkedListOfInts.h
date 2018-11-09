@@ -24,6 +24,8 @@ public:
    bool t2();//Is list not empty?
    bool t3();//Is size zero?
    bool t4();//Is size correct if 5 values added?
+   bool t5();//Search
+  // bool t6();//Search
 
 
    void printPassFail(bool isPassed) const;

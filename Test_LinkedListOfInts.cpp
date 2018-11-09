@@ -17,11 +17,12 @@ void Test_LinkedListOfInts::runTests(){
     t2();
     t3();
     t4();
+    t5();
 }
 bool Test_LinkedListOfInts::t1(){
     m_testNum++;
     LinkedListOfInts list;
-    printTestMessage(" is new list empty: ");
+    printTestMessage(" isEmpty()= true for new list: ");
 
     if(list.isEmpty()){
         m_bool= true;
@@ -35,14 +36,14 @@ bool Test_LinkedListOfInts::t1(){
 bool Test_LinkedListOfInts::t2(){
     m_testNum++;
     LinkedListOfInts list;
-    printTestMessage(" is new list false if not empty: ");
-    list.addFront(9);
+    printTestMessage(" isEmpty()= false with one addFront(); ");
+    list.addFront(1);
     if(list.isEmpty()){
-       std::cout<<"LinkledList.size= "<<list.size()<<" ";
+       std::cout<<"LinkledList.size= "<<list.size()<<": ";
        m_bool= false;
     }
-    else{
-        std::cout<<"LinkledList.size = "<<list.size()<<" ";
+    if(!list.isEmpty()){
+        std::cout<<"LinkledList.size = "<<list.size()<<": ";
         m_bool= true;
     }
     printPassFail(m_bool);
@@ -52,13 +53,13 @@ bool Test_LinkedListOfInts::t2(){
 bool Test_LinkedListOfInts::t3(){
     m_testNum++;
     LinkedListOfInts list;
-    printTestMessage(" size of empty list is zero: ");
+    printTestMessage(" size()= 0 for new empty list; ");
     if(list.size()== 0){
-        std::cout<<"LinkledList.size= "<<list.size()<<" ";
+        std::cout<<"LinkledList.size= "<<list.size()<<": ";
         m_bool= true;
     }
     else{
-        std::cout<<"LinkledList.size= "<<list.size()<<" ";
+        std::cout<<"LinkledList.size= "<<list.size()<<": ";
         m_bool= false;
     }
     printPassFail(m_bool);
@@ -67,24 +68,59 @@ bool Test_LinkedListOfInts::t3(){
 bool Test_LinkedListOfInts::t4(){
     m_testNum++;
     LinkedListOfInts list;
-    printTestMessage(" is size 5: ");
+    printTestMessage(" size()= 5 for three addFront() and two addBack(); ");
     list.addFront(1);
     list.addFront(2);
     list.addFront(3);
-    list.addFront(4);
-    list.addFront(5);
+    list.addBack(4);
+    list.addBack(5);
     if(list.size()== 5){
-        std::cout<<"LinkledList.size= "<<list.size()<<" ";
+        std::cout<<"LinkledList.size= "<<list.size()<<": ";
         m_bool= true;
     }
     else{
-        std::cout<<"LinkledList.size= "<<list.size()<<" ";
+        std::cout<<"LinkledList.size= "<<list.size()<<": ";
         m_bool= false;
     }
     printPassFail(m_bool);
     return m_bool;
 }
-
+bool Test_LinkedListOfInts::t5(){
+    m_testNum++;
+    LinkedListOfInts list;
+    printTestMessage(" search() is correct index with 3 addFront and 2 addBack: ");
+    list.addFront(1);
+    list.addFront(2);
+    list.addFront(3);
+    list.addBack(4);
+    list.addBack(5);
+        if(list.search(1) == false){
+            m_bool= false;
+        }
+        else if(list.search(2) == false){
+            m_bool= false;
+        }
+        else if(list.search(3) == false){
+            m_bool= false;
+        }
+        else if(list.search(4) == false){
+            m_bool= false;
+        }
+        else if(list.search(5) == false){
+            m_bool= false;
+        }
+        else if(list.search(0) == true){
+            m_bool= false;
+        }
+        else if(list.search(0) == true){
+            m_bool= false;
+        }
+        else{
+            m_bool= true;
+        }
+        printPassFail(m_bool);
+        return m_bool;
+}
 
 void Test_LinkedListOfInts::printPassFail(bool isPassed) const
 {
